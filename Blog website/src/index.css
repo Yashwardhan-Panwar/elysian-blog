@@ -1,0 +1,29 @@
+/* src/index.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  color: #edf4f0;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a1f15;
+}
+::-webkit-scrollbar-thumb {
+  background: #2c6e4f;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3c9e6f;
+}
