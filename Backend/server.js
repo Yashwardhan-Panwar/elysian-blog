@@ -7,20 +7,17 @@ const postsRoutes = require('./routes/posts');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-const cors = require('cors');
-
 // Allow multiple origins
 const allowedOrigins = [
-  'http://localhost:3000',          // your local React dev server
-  'https://elysianblog.netlify.app' // your live frontend
+  'http://localhost:3000',
+  'https://elysianblog.netlify.app'
 ];
 
 app.use(cors({
   origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps or curl)
     if (!origin) return callback(null, true);
     if (allowedOrigins.indexOf(origin) === -1) {
-      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+      const msg = 'CORS policy does not allow this origin.';
       return callback(new Error(msg), false);
     }
     return callback(null, true);
