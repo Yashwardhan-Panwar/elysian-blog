@@ -4,7 +4,7 @@ import axios from 'axios';
 const API_BASE = 'http://localhost:5000/api';
 
 const api = axios.create({
-  baseURL: 'https://elysian-blog-backend.onrender.com',
+  baseURL: import.meta.env.VITE_API_URL,
 });
 
 // Attach token to every request if available
