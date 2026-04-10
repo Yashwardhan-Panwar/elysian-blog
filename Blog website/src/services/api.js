@@ -1,10 +1,11 @@
 // src/services/api.js
 import axios from 'axios';
 
-const API_BASE = 'http://localhost:5000/api';
+// Use environment variable, fallback to localhost for development
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
+  baseURL: API_BASE,
 });
 
 // Attach token to every request if available
@@ -15,5 +16,7 @@ api.interceptors.request.use((config) => {
   }
   return config;
 });
+
+console.log('API Base URL:', api.defaults.baseURL);
 
 export default api;
